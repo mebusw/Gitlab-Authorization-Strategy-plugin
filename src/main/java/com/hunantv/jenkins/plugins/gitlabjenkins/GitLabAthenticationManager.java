@@ -1,7 +1,7 @@
 package com.hunantv.jenkins.plugins.gitlabjenkins;
 
 import hudson.model.User;
-import hudson.tasks.Mailer;
+//import hudson.tasks.Mailer;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -48,7 +48,8 @@ public class GitLabAthenticationManager implements AuthenticationManager {
 
 			User u = User.current();
 			u.setFullName(userDetails.getSession().getName());
-			if (!u.getProperty(Mailer.UserProperty.class)
+			LOGGER.info("user email= " + userDetails.getSession().getEmail());
+			/*if (!u.getProperty(Mailer.UserProperty.class)
 					.hasExplicitlyConfiguredAddress()) {
 				try {
 					u.addProperty(new Mailer.UserProperty(userDetails
@@ -56,7 +57,7 @@ public class GitLabAthenticationManager implements AuthenticationManager {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			}
+			}*/
 		} else {
 			LOGGER.info("gitlab did not return an access token.");
 		}
