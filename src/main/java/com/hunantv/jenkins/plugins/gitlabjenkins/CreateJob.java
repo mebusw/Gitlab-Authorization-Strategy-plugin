@@ -1,7 +1,7 @@
 package com.hunantv.jenkins.plugins.gitlabjenkins;
 
 import hudson.model.User;
-import hudson.tasks.Mailer;
+//import hudson.tasks.Mailer;
 
 import java.io.IOException;
 
